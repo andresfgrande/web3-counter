@@ -27,6 +27,12 @@ describe("Counter", function () {
 
             expect(counterValue).to.equal(0);
         })
+
+        it("Should have the last user as a zero address", async function(){
+            const lastUser = await counter.lastUser();
+
+            expect(lastUser).to.equal(ethers.ZeroAddress);
+        })
     })
 
 });
